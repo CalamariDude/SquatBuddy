@@ -34,8 +34,10 @@ def hello():
 
 @app.route("/good", methods=('POST',))
 def hello21():
-    json = str(request.data['data']) 
-    classification = str(request.data['classification']) 
+    print("request.get_json() ", request.get_json())
+    print("reqest.data()", request.data)
+    json = (request.data['data']) 
+    classification = (request.data['classification']) 
     frames.append(json)
     target.append(classification)
     return json
